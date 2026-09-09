@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đào tạo - HUMG</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        /* Thanh menu trên cùng */
+        .menu {
+            background-color: #3498db;
+            padding: 10px 20px;
+        }
+
+        .menu button {
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        /* Khối nội dung chính */
+        .noi-dung {
+            padding: 15px;
+        }
+
+        /* Khung chung cho mỗi section */
+        .khoi {
+            background-color: white;
+            border: 1px solid #b8d4e8;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+
+        /* Tiêu đề section */
+        .tieu-de {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 15px;
+            border-bottom: 1px solid #e0e0e0;
+            background-color: #fafafa;
+        }
+
+        .tieu-de h2 {
+            font-size: 16px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .tieu-de .icon {
+            color: #3498db;
+            margin-right: 8px;
+        }
+
+        .xem-tiep {
+            color: #3498db;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .xem-tiep:hover {
+            text-decoration: underline;
+        }
+
+        /* Phần Tin tức - 3 cột */
+        .danh-sach-tin {
+            display: flex;
+            padding: 15px;
+            gap: 15px;
+        }
+
+        .tin-tuc {
+            flex: 1;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .tin-tuc img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .anh-gia {
+            width: 100%;
+            height: 120px;
+            background-color: #e8e8e8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 13px;
+        }
+
+        .tin-tuc .noi-dung-tin {
+            padding: 10px;
+        }
+
+        .meta {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+            font-size: 12px;
+            color: #888;
+        }
+
+        .badge-new {
+            background-color: #f39c12;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+        .tin-tuc a {
+            color: #333;
+            text-decoration: none;
+            font-size: 13px;
+            line-height: 1.4;
+        }
+
+        .tin-tuc a:hover {
+            color: #3498db;
+        }
+
+        /* Phần Thông báo */
+        .thong-bao-noi-dung {
+            padding: 15px;
+        }
+
+        /* 2 banner trên */
+        .banner-row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .banner {
+            flex: 1;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .banner img {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .banner-gia {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .banner-do {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+        }
+
+        .banner-vang {
+            background: linear-gradient(135deg, #f1c40f, #f39c12);
+            color: #333;
+        }
+
+        .banner .noi-dung-tin {
+            padding: 10px;
+        }
+
+        /* Danh sách thông báo */
+        .ds-thong-bao {
+            list-style: none;
+        }
+
+        .ds-thong-bao li {
+            display: flex;
+            align-items: flex-start;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+            gap: 8px;
+        }
+
+        .ds-thong-bao li:last-child {
+            border-bottom: none;
+        }
+
+        .muiten {
+            color: #3498db;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .ds-thong-bao a {
+            color: #333;
+            text-decoration: none;
+            font-size: 13px;
+            flex: 1;
+        }
+
+        .ds-thong-bao a:hover {
+            color: #3498db;
+        }
+
+        .ngay {
+            color: #888;
+            font-size: 12px;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Menu trên -->
+    <div class="menu">
+        <button>Tính năng &#9660;</button>
+    </div>
+
+    <div class="noi-dung">
+
+        <!-- Section Tin tức -->
+        <div class="khoi">
+            <div class="tieu-de">
+                <h2><span class="icon">&#128226;</span> Tin tức</h2>
+                <a href="#" class="xem-tiep">Xem tiếp &gt;</a>
+            </div>
+            <div class="danh-sach-tin">
+
+                <div class="tin-tuc">
+                    <div class="anh-gia">NO IMAGE</div>
+                    <div class="noi-dung-tin">
+                        <div class="meta">
+                            <span class="badge-new">New</span>
+                            <span>05/05/2026</span>
+                        </div>
+                        <a href="#">Về việc đăng ký khối lượng học tập tích lũy HKII năm học 2025-2026</a>
+                    </div>
+                </div>
+
+                <div class="tin-tuc">
+                    <div class="anh-gia">NO IMAGE</div>
+                    <div class="noi-dung-tin">
+                        <div class="meta">
+                            <span class="badge-new">New</span>
+                            <span>04/05/2026</span>
+                        </div>
+                        <a href="#">Thông báo về việc tổ chức thi kết thúc học phần HKII năm học 2025-2026</a>
+                    </div>
+                </div>
+
+                <div class="tin-tuc">
+                    <div class="anh-gia" style="background-color: #d5e8f7; color: #2980b9;">HUMG</div>
+                    <div class="noi-dung-tin">
+                        <div class="meta">
+                            <span class="badge-new">New</span>
+                            <span>03/05/2026</span>
+                        </div>
+                        <a href="#">Trường ĐH Mỏ - Địa chất đạt chuẩn kiểm định chất lượng giáo dục</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Section Thông báo -->
+        <div class="khoi">
+            <div class="tieu-de">
+                <h2><span class="icon">&#127968;</span> Thông báo</h2>
+                <a href="#" class="xem-tiep">Xem tiếp &gt;</a>
+            </div>
+            <div class="thong-bao-noi-dung">
+
+                <!-- 2 banner -->
+                <div class="banner-row">
+                    <div class="banner">
+                        <div class="banner-gia banner-do">&#128226; THÔNG BÁO</div>
+                        <div class="noi-dung-tin">
+                            <div class="meta">
+                                <span>02/05/2026</span>
+                            </div>
+                            <a href="#">Thông báo về việc đăng ký thực tập tốt nghiệp đợt 1 năm 2026</a>
+                        </div>
+                    </div>
+                    <div class="banner">
+                        <div class="banner-gia banner-vang">&#128221; THÔNG BÁO</div>
+                        <div class="noi-dung-tin">
+                            <div class="meta">
+                                <span>01/05/2026</span>
+                            </div>
+                            <a href="#">Thông báo lịch nghỉ lễ 30/4 và 1/5 năm 2026</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Danh sách thông báo -->
+                <ul class="ds-thong-bao">
+                    <li>
+                        <span class="muiten">&raquo;</span>
+                        <span class="badge-new">New</span>
+                        <a href="#">Thông báo về việc đăng ký học phần HKII năm học 2025-2026</a>
+                        <span class="ngay">30/04/2026</span>
+                    </li>
+                    <li>
+                        <span class="muiten">&raquo;</span>
+                        <a href="#">Thông báo về việc nộp đơn xin cấp học bổng KKHT HKII</a>
+                        <span class="ngay">28/04/2026</span>
+                    </li>
+                    <li>
+                        <span class="muiten">&raquo;</span>
+                        <span class="badge-new">New</span>
+                        <a href="#">Thông báo lịch thi kết thúc học phần HKII năm học 2025-2026</a>
+                        <span class="ngay">25/04/2026</span>
+                    </li>
+                    <li>
+                        <span class="muiten">&raquo;</span>
+                        <a href="#">Thông báo về việc đăng ký môn học tự chọn HKII</a>
+                        <span class="ngay">20/04/2026</span>
+                    </li>
+                    <li>
+                        <span class="muiten">&raquo;</span>
+                        <a href="#">Thông báo triển khai đánh giá giảng viên HKII năm học 2025-2026</a>
+                        <span class="ngay">15/04/2026</span>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
