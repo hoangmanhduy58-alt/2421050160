@@ -7,54 +7,135 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <!-- Menu trên -->
-    <nav class="danh-muc">
-        <ul class="danh-sach-muc">
-            <li><a class="lienket" href="#">Thực tập, Đồ án</a></li>
-            <li><a class="lienket" href="#">Thủ tục Một cửa</a></li>
-            <li><a class="lienket" href="#">Một cửa online</a></li>
-            <li><a class="lienket" href="#">E-mail HUMG</a></li>
-        </ul>
-    </nav>
-
-    <main class="noi-dung-chinh">
-
-        <!-- Cột trái -->
-        <aside class="trai">
-
-            <!-- Form đăng nhập -->
-            <form class="khoi-dang-nhap" action="#" method="post">
-
-                <label for="taikhoan">Tài khoản</label>
-                <input type="text" id="taikhoan" name="taikhoan">
-
-                <label for="matkhau">Mật khẩu</label>
-                <div class="mat-khau">
-                    <input type="password" id="matkhau" name="matkhau" >
+<nav class="danh-muc">
+    <ul class="danh-sach-muc">
+        <li><a class="lienket" href="#">Thực tập, Đồ án</a></li>
+        <li><a class="lienket" href="#">Thủ tục Một cửa</a></li>
+        <li><a class="lienket" href="#">Một cửa online</a></li>
+        <li><a class="lienket" href="#">E-mail HUMG</a></li>
+    </ul>
+</nav>
+<main class="noi-dung-chinh">
+    <aside class="trai">
+        <form class="khoi-dang-nhap" action="#" method="post">
+            <label for="taikhoan">Tài khoản</label>
+            <input type="text" id="taikhoan" name="taikhoan">
+            <label for="matkhau">Mật khẩu</label>
+            <input type="password" id="matkhau" name="matkhau">
+            <a href="#" class="quen-mk">Quên mật khẩu?</a>
+            <button type="submit" class="btn-dang-nhap">Đăng nhập</button>
+            <button type="button" class="btn-microsoft">Đăng nhập với Microsoft office 365</button>
+        </form>
+    <!-- tin tức -->
+    </aside>
+    <section class="phai">
+        <article class="bang-tin">
+            <header class="dau-bang">
+                <h2 class="ten-bang">Tin tức</h2>
+                <a class="xem-tiep" href="#">Xem tiếp &gt;</a>
+            </header>
+            <div class="than-bang than-tin-tuc">
+                <div class="o-tin">
+                    <img src="../Anh/tin%20tuc.png" alt="">
+                    <div class="noi-dung-tin">
+                        <span class="ngay">05/05/2026</span>
+                        <a href="#">Về việc đăng ký khối lượng học tập học kỳ phụ năm học 2025-2026</a>
+                    </div>
                 </div>
-
-                <a href="#" class="quen-mk">Quên mật khẩu?</a>
-
-                <button type="submit" class="btn-dang-nhap">Đăng nhập</button>
-                <button type="button" class="btn-microsoft">Đăng nhập với Microsoft office 365</button>
-
-            </form>
-
-        </aside>
-
-        <!-- Cột phải -->
-        <section class="phai">
-            <div class="noi-dung-phai">
-                <div class="tin">
-                    <div class="chức năng-tin"></div>
-                        <div class="tiêu đề-tin">Tin tức</div>
-                        <div class="xem-tiep"><a class="lien-ket-xem-tiep" href="#">Xem tiếp</a></div>
+                <div class="o-tin">
+                    <img src="../Anh/tin%20tuc.png" alt="">
+                    <div class="noi-dung-tin">
+                        <span class="ngay">04/05/2026</span>
+                        <a href="#">Thông báo tổ chức thi kết thúc học phần HKII năm học 2025-2026</a>
+                    </div>
                 </div>
-            <!-- Tin tức, thông báo sẽ thêm sau -->
-        </section>
-
-    </main>
-
+                <div class="o-tin">
+                    <img src="../Anh/tin%20tuc%202.png" alt="">
+                    <div class="noi-dung-tin">
+                        <span class="ngay">03/05/2026</span>
+                        <a href="#">Trường ĐH Mỏ - Địa chất đạt chuẩn kiểm định chất lượng giáo dục</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+          <!-- thông báo -->
+        <article class="bang-tin">
+            <header class="dau-bang">
+                <h2 class="ten-bang">Thông báo</h2>
+                <a class="xem-tiep" href="#">Xem tiếp &gt;</a>
+            </header>
+            <div class="than-bang than-thong-bao">
+                <div class="cot-trai">
+                    <div class="o-anh">
+                        <img src="../Anh/thong%20bao.png" alt="">
+                        <div class="noi-dung-tin">
+                            <span class="ngay">27/08/2026</span>
+                            <a href="#">Thông báo về việc nghỉ học nhân dịp Quốc khánh 2/9</a>
+                        </div>
+                    </div>
+                    <div class="o-anh">
+                        <img src="../Anh/thong%20bao%202.png" alt="">
+                        <div class="noi-dung-tin">
+                            <span class="ngay">26/08/2026</span>
+                            <a href="#">Thông báo về việc đăng ký học phần học kỳ 1 năm học 2026-2027</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cot-phai">
+                    <ul class="danh-sach-link">
+                        <li><span class="muiten"> >> </span>
+                            <a href="#">Thông báo về việc thực tập tốt nghiệp/doanh nghiệp và Đồ án/khóa luận tốt nghiệp của sinh viên đợt 1A năm học 2026-2027</a>
+                            <span class="ngay">11/08/2026</span></li>
+                        <li><span class="muiten"> >> </span>
+                            <a href="#">Về việc đăng ký khối lượng học tập học kỳ 1 năm học 2026-2027</a>
+                            <span class="ngay">20/07/2026</span></li>
+                        <li><span class="muiten"> >> </span>
+                            <a href="#">Thông báo về việc kiểm tra điều kiện xét tốt nghiệp đợt 3 năm học 2025-2026 (Tháng 07/2026)</a>
+                            <span class="ngay">16/07/2026</span></li>
+                    </ul>
+                </div>
+            </div>
+        </article>
+         <!-- hướng dẫn -->
+        <article class="bang-tin">
+            <header class="dau-bang">
+                <h2 class="ten-bang">Hướng dẫn</h2>
+                <a class="xem-tiep" href="#">Xem tiếp &gt;</a>
+            </header>
+            <div class="than-bang than-huong-dan">
+                <div class="cot-trai">
+                    <div class="o-anh">
+                        <img src="../Anh/huong%20dan.png" alt="">
+                        <div class="noi-dung-tin">
+                            <span class="ngay">18/11/2025</span>
+                            <a href="#">Hướng dẫn đăng ký khối lượng học tập tại trang web</a>
+                        </div>
+                    </div>
+                    <div class="o-anh">
+                        <img src="../Anh/huong%20dan%202.png" alt="">
+                        <div class="noi-dung-tin">
+                            <span class="ngay">1/08/2023</span>
+                            <a href="#">Hướng dẫn lấy lại mật khẩu trang web daotaodaihoc.humg.edu.vn</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cot-phai">
+                    <ul class="danh-sach-link">
+                        <li><span class="muiten"> >> </span>
+                            <a href="#">Hướng dẫn sử dụng email sinh viên @humg.edu.vn</a>
+                            <span class="ngay">01/08/2023</span></li>
+                        <li><span class="muiten"> >> </span>
+                            <a href="#">Hướng dẫn đăng ký khối lượng học tập tại trang web daotaodaihoc.humg.edu.vn</a>
+                            <span class="ngay">19/12/2024</span></li>
+                        <li><span class="muiten"> >> </span>
+                            <a href="#">Hướng dẫn kiểm tra, tra cứu trực tuyến thông tin về bằng tốt nghiệp của trường Đại học Mỏ - Địa chất</a>
+                            <span class="ngay">11/05/2021</span></li>
+                    
+                    </ul>
+                </div>
+            </div>
+        </article>
+    </section>
+</main>
 </body>
 </html>

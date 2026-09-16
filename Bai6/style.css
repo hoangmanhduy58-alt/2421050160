@@ -6,13 +6,11 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+    background: #f5f5f5;
 }
 
-/* Thanh menu trên */
 .danh-muc {
-    background-color: #194496;
-    color: #fff;
+    background: #194496;
     padding: 10px 15px;
 }
 
@@ -23,16 +21,16 @@ body {
 }
 
 .lienket {
-    text-decoration: none;
     color: #f5f3f3;
     font-size: 14px;
+    text-decoration: none;
 }
 
-.lienket:hover {
+.lienket:hover,
+.xem-tiep:hover {
     text-decoration: underline;
 }
 
-/* Chia 2 cột trái - phải */
 .noi-dung-chinh {
     display: flex;
     gap: 20px;
@@ -40,106 +38,202 @@ body {
 }
 
 .trai {
-    width: 220px;
-    height: 100vh;
-    border-right: 2px solid #198cf0;
-    border-radius: 4px;
+    width: 260px;
+    flex-shrink: 0;
     padding: 10px;
+    background: #fff;
+    border: 1px solid #b8d4e8;
+    border-radius: 6px;
 }
 
 .phai {
- width: 100%;
-}
-
-.noi-dung-phai {
+    flex: 1;
     display: flex;
-    gap: 20px;
-    padding: 15px;
-}
-.tin {
-    width: 100%;
-    height: 100%;
-    background-color: hsl(206, 64%, 98%);
-    border-radius: 6px;
-    padding: 10px;
+    flex-direction: column;
+    gap: 15px;
 }
 
-/* Form đăng nhập */
 .khoi-dang-nhap {
-    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .khoi-dang-nhap label {
-    display: block;
     font-size: 13px;
-    color: #555;
-    margin-bottom: 4px;
-    margin-top: 8px;
 }
 
-.khoi-dang-nhap input[type="text"],
-.khoi-dang-nhap input[type="password"] {
+.khoi-dang-nhap input {
     width: 100%;
-    padding: 8px 10px;
-    border: 1px solid #b8d4e8;
-    border-radius: 20px;
-    background-color: #eef6fc;
-    font-size: 13px;
-    outline: none;
-}
-
-.khoi-dang-nhap input:focus {
-    border-color: #0091d5;
-}
-
-.mat-khau input {
-    padding-right: 35px;
-}
-
-/* Quên mật khẩu */
-.quen-mk {
-    display: block;
-    text-align: right;
-    font-size: 12px;
-    color: #0091d5;
-    font-style: italic;
-    text-decoration: none;
-    margin: 8px 0 12px;
-}
-
-.quen-mk:hover {
-    text-decoration: underline;
-}
-
-/* Nút đăng nhập */
-.btn-dang-nhap {
-    width: 100%;
-    padding: 8px;
-    background-color: #5bc0de;
-    color: #fff;
-    border: none;
-    /* thẻ chỉnh viền */
+    padding: 6px;
+    border: 1px solid #ccc;
     border-radius: 4px;
-    font-size: 14px;
-    cursor: pointer;
-    margin-bottom: 8px;
 }
 
-.btn-dang-nhap:hover {
-    background-color: #46b8da;
+.quen-mk {
+    font-size: 12px;
+    color: #194496;
+}
+
+.btn-dang-nhap,
+.btn-microsoft {
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.btn-dang-nhap {
+    background: #3498db;
 }
 
 .btn-microsoft {
-    width: 100%;
-    padding: 8px;
-    background-color: #0078d4;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    font-size: 12px;
-    cursor: pointer;
+    background: #194496;
 }
 
-.btn-microsoft:hover {
-    background-color: #006cbe;
+.bang-tin {
+    background: #fff;
+    border: 1px solid #7eb8e8;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.dau-bang {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background: #e8f4fc;
+    border-bottom: 1px solid #b8d4e8;
+}
+
+.ten-bang {
+    font-size: 15px;
+    font-weight: bold;
+    color: #194496;
+}
+
+.xem-tiep {
+    font-size: 13px;
+    color: #3498db;
+    text-decoration: none;
+}
+
+.than-bang {
+    padding: 15px;
+}
+
+.than-tin-tuc,
+.than-thong-bao,
+.than-huong-dan {
+    display: flex;
+    gap: 15px;
+}
+
+.cot-trai {
+    flex: 1;
+    display: flex;
+    gap: 10px;
+}
+
+.o-tin,
+.o-anh {
+    flex: 1;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+}
+
+.o-tin img {
+    width: 100%;
+    height: 110px;
+    object-fit: cover;
+    display: block;
+}
+
+.o-anh img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    display: block;
+}
+
+.cot-phai {
+    flex: 1;
+    padding: 8px 12px;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+}
+
+.noi-dung-tin {
+    padding: 8px 10px 10px;
+}
+
+.ngay {
+    color: #888;
+    font-size: 12px;
+}
+
+.noi-dung-tin > .ngay {
+    display: block;
+    margin-bottom: 6px;
+}
+
+.badge-new {
+    padding: 2px 7px;
+    background: #f39c12;
+    color: #fff;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 3px;
+}
+
+.noi-dung-tin a,
+.danh-sach-link a {
+    color: #333;
+    font-size: 13px;
+    line-height: 1.4;
+    text-decoration: none;
+}
+
+.noi-dung-tin a:hover,
+.danh-sach-link a:hover {
+    color: #3498db;
+}
+
+.danh-sach-link {
+    list-style: none;
+}
+
+.danh-sach-link li {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: flex-start;
+    padding: 8px 0;
+    font-size: 13px;
+    border-bottom: 1px solid #eee;
+}
+
+.danh-sach-link li:last-child {
+    border-bottom: none;
+}
+
+.muiten {
+    color: #3498db;
+    font-weight: bold;
+}
+
+.danh-sach-link a {
+    flex: 1;
+    min-width: 120px;
+}
+
+.danh-sach-link .ngay {
+    margin-left: auto;
+    white-space: nowrap;
 }
