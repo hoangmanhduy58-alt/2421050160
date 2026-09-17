@@ -237,3 +237,147 @@ body {
     margin-left: auto;
     white-space: nowrap;
 }
+
+/* Menu cột trái */
+.menu-trai {
+    list-style: none;
+    margin-top: 15px;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 10px;
+}
+
+.muc-trai {
+    display: block;
+    padding: 10px 12px;
+    color: #333;
+    font-size: 14px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.muc-trai:hover {
+    background: #e8f4fc;
+    color: #194496;
+}
+
+.muc-trai.dang-chon {
+    background: #d6ebf8;
+    color: #194496;
+    font-weight: bold;
+}
+
+/* Thương hiệu dưới sidebar */
+.thuong-hieu {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #e0e0e0;
+    text-align: center;
+}
+
+.logo-humg {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 10px;
+    border-radius: 50%;
+    background: #194496;
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 70px;
+}
+
+.ten-truong {
+    font-size: 12px;
+    font-weight: bold;
+    color: #194496;
+    margin-bottom: 4px;
+}
+
+.ten-cong {
+    font-size: 11px;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.phien-ban,
+.thiet-ke {
+    font-size: 11px;
+    color: #888;
+}
+
+/* Badge New trong ảnh hướng dẫn */
+.noi-dung-tin .badge-new {
+    display: inline-block;
+    margin-bottom: 6px;
+}
+
+/* Cài đặt App mobile */
+.than-app {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    padding: 25px 15px;
+}
+
+.khoi-qr {
+    text-align: center;
+}
+
+.nut-store {
+    display: inline-block;
+    padding: 8px 14px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.store-apple {
+    background: #000;
+}
+
+.store-google {
+    background: #3d3d3d;
+}
+
+.o-qr {
+    width: 140px;
+    height: 140px;
+    margin: 0 auto;
+    display: block;
+    object-fit: contain;
+    border: 1px solid #ddd;
+}
+
+.nut-slide {
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 50%;
+    background: #ccc;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.nut-slide:hover {
+    background: #3498db;
+}
+
+/* Nút lên đầu trang */
+.len-dau-trang {
+    position: fixed;
+    right: 20px;
+    bottom: 30px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #3498db;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    line-height: 40px;
+    text-decoration: none;
+}
