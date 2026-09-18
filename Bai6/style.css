@@ -350,34 +350,3 @@ body {
     object-fit: contain;
     border: 1px solid #ddd;
 }
-
-.nut-slide {
-    width: 36px;
-    height: 36px;
-    border: none;
-    border-radius: 50%;
-    background: #ccc;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.nut-slide:hover {
-    background: #3498db;
-}
-
-/* Nút lên đầu trang */
-.len-dau-trang {
-    position: fixed;
-    right: 20px;
-    bottom: 30px;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: #3498db;
-    color: #fff;
-    font-size: 18px;
-    text-align: center;
-    line-height: 40px;
-    text-decoration: none;
-}
