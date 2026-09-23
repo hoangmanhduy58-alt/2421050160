@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+</head>
+<body>
+    <!-- internal Javascript -->
+    <script>
+        // in ra màn hình 
+        document.write("Hello World ");
+        var ten = "Duy ";
+        ten = "Duy ";
+        document.write("<br>" + ten);
+        
+        var nam = 2026;
+        document.write("<br>Year: " + nam);
+        // phep toan
+        // phep cong
+        var a = 10;
+        var b = 20;
+        var tong = a + b;
+        document.write("<br>Tong: " + tong);
+        // phep tru
+        var hieu = a - b;
+        document.write("<br>Hieu: " + hieu);
+        // phep nhan
+        var tich = a * b;
+        document.write("<br>Tich: " + tich);
+        // phep chia
+        var thuong = a / b;
+        document.write("<br>Thuong: " + thuong);
+        // %
+        var phanTram = a % b;
+        document.write("<br>Phan Tram: " + phanTram);
+        //++
+        document.writeln("<br>" );
+        document.writeln(++ a);
+        // -- tuong tu ++
+        a+=b;
+        document.writeln("<br>");
+        document.writeln(a);
+        a-=b;
+        document.writeln("<br>");
+        document.writeln(a);
+        var ho = "Hoang";
+        document.writeln("<br>"+ ho+ " "+ten );
+        document.writeln("<br>" );
+        document.writeln(ho.length );
+        document.writeln("<br>" );
+        // typeof kiem tra kieu du lieu
+        document.writeln(typeof(ho ));
+        document.writeln("<br>" );
+        // indexOf tim vi tri cua ky tu trong chuoi
+        var hoTen = " Hoang Manh Duy";
+        document.writeln(hoTen.indexOf("D") );
+        document.writeln("<br>" );
+        // includes kiem tra chuoi co chua ky tu hay khong
+        document.writeln(hoTen.includes("P") );
+        document.writeln("<br>" );
+        document.writeln(hoTen.startsWith("H") );
+        document.writeln("<br>" );
+        document.writeln(hoTen.replace("Duy", "Phuong") );
+        document.writeln("<br>" );
+        //
+        document.writeln(hoTen.toLocaleLowerCase() );
+    </script>
+    <!-- external Javascript -->
+    <script src="script.js"></script>
+</body>
+</html

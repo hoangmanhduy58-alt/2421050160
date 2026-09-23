@@ -1,29 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web phim</title>
-    <link rel="stylesheet" href="style.css">
     <style>
         body {
             color: #fff;
             background: #2F2C38;
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
         }
         .danh-sach-muc {
             list-style: none;
             display: flex;
-            gap:20px;
+            gap: 20px;
             align-items: center;
+            padding: 0;
+            margin: 0;
+            flex-wrap: wrap;
         }
         .lien-ket-muc {
             color: #fff;
             text-decoration: none;
-        } 
+        }
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 10px 20px;
         }
         .muc {
             padding: 10px;
@@ -33,13 +38,18 @@
             background: #fff;
             color: #2F2C38;
         }
+        .muc:hover .lien-ket-muc {
+            color: #2F2C38;
+        }
         .logo {
             width: 50px;
             height: 30px;
         }
         .avata {
-            width: 80%;
+            width: 40px;
+            height: 40px;
             border-radius: 10px;
+            object-fit: cover;
         }
         .dang-chon {
             color: #fff;
@@ -48,88 +58,193 @@
         .banner {
             width: 95%;
             border-radius: 20px;
-            margin:20px auto;
+            margin: 20px auto;
         }
         .banner-anh {
             width: 100%;
-            height: 100%;
+            height: 320px;
+            object-fit: cover;
             border-radius: 20px;
+            display: block;
         }
         .danh-sach-the-loai {
             width: 95%;
+            margin: 20px auto 10px;
             display: flex;
             gap: 20px;
-            justify-content: center;
+            align-items: baseline;
+        }
+        .the-loai {
+            font-size: 14px;
+            color: #bbb;
+        }
+        .ten-loai {
+            font-size: 22px;
+            font-weight: bold;
+        }
+        .danh-sach-phim {
+            width: 95%;
+            margin: 0 auto 30px;
         }
         .phim {
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            gap: 14px;
+            align-items: flex-start;
+            overflow-x: auto;
+            padding-bottom: 8px;
         }
         .phim-poster {
-            width: 24%;
-            height: 15vh;
+            width: 140px;
+            height: 200px;
+            object-fit: cover;
             border-radius: 15px;
+            flex-shrink: 0;
+            background: #1a1820;
+        }
+        .phim-poster:hover {
+            outline: 2px solid #fff;
         }
     </style>
 </head>
-<body> 
+<body>
     <header>
-    <nav class="danh-muc">
-        <ul class="danh-sach-muc">
-            <li class="muc"><a class="lien-ket-muc" href="#"> <img src="/Anh/logo.svg" alt="Logo" class="logo"> </a></li>
-            <li class="muc"><a class="lien-ket-muc" href="#">Trang chủ</a></li>
-            <li class="muc"><a class="lien-ket-muc" href="#">Nhân vật</a></li>
-            <li class="muc"><a class="lien-ket-muc" href="#">Series</a></li>
-            <li class="muc"><a class="lien-ket-muc" href="#">Phim</a></li>
-            <li class="muc"><a class="lien-ket-muc" href="#">Mới & phổ biến</a></li>
-            <li class="muc"><a class="lien-ket-muc" href="#">Netfix cảu tôi</a></li>
-            <li class="muc"><a class="lien-ket-muc" href="#">Duyệt tìm thoe ngôn ngữ</a></li>
-        </ul>
-    </nav>
-    <div class ="chuc-nang">
-        <div class="tim-kiem"></div>
-        <div class="thong-tin">
-            <img src="/Anh/avata.jpg" alt="Avata" class="avata">
-    </div>
+        <nav class="danh-muc">
+            <ul class="danh-sach-muc">
+                <li class="muc"><a class="lien-ket-muc" href="#"><img src="../Anh/logo.svg" alt="Logo" class="logo"></a></li>
+                <li class="muc"><a class="lien-ket-muc" href="#">Trang chủ</a></li>
+                <li class="muc"><a class="lien-ket-muc" href="#">Nhân vật</a></li>
+                <li class="muc"><a class="lien-ket-muc" href="#">Series</a></li>
+                <li class="muc"><a class="lien-ket-muc" href="#">Phim</a></li>
+                <li class="muc"><a class="lien-ket-muc" href="#">Mới & phổ biến</a></li>
+                <li class="muc"><a class="lien-ket-muc" href="#">Netflix của tôi</a></li>
+                <li class="muc"><a class="lien-ket-muc" href="#">Duyệt tìm theo ngôn ngữ</a></li>
+            </ul>
+        </nav>
+        <div class="chuc-nang">
+            <div class="tim-kiem"></div>
+            <div class="thong-tin">
+                <img src="../Anh/avata.jpg" alt="Avata" class="avata">
+            </div>
+        </div>
     </header>
+
     <main>
         <div class="banner">
-            <img class ="banner-anh" src="/Anh/banner1.jpg" alt="Banner">
+            <img class="banner-anh" src="../Anh/banner1.jpg" alt="Banner">
         </div>
+
         <div class="danh-sach-the-loai">
-            <div class="the-loai">Hành động</div>
-            <div class="ten-loai"> Có thể bạn chưa xem</div>
-            </div>
+            <div class="the-loai">Gợi ý</div>
+            <div class="ten-loai">Có thể bạn chưa xem</div>
+        </div>
         <div class="danh-sach-phim">
             <div class="phim">
-                <img src="/Anh/phim3.jpg" alt="Phim 1" class="phim-poster"></img>
-                <img src="/Anh/phim3.jpg" alt="Phim 1" class="phim-poster"></img>
-                <img src="/Anh/phim3.jpg" alt="Phim 1" class="phim-poster"></img>
+                <img src="../Anh/phim01.jpg" alt="Hải Mộ Tầm Long" class="phim-poster">
+                <img src="../Anh/phim02.jpg" alt="Những Ngả Đường Ước Mơ" class="phim-poster">
+                <img src="../Anh/phim03.jpg" alt="Đứa Con Của Riêng Tôi" class="phim-poster">
+                <img src="../Anh/phim04.jpg" alt="Vạn Dặm Hẹn Ước" class="phim-poster">
+                <img src="../Anh/phim05.jpg" alt="Ký Sinh Trùng" class="phim-poster">
+                <img src="../Anh/phim06.jpg" alt="Hồn Ma Không Chân 2" class="phim-poster">
+                <img src="../Anh/phim07.jpg" alt="Hồn Ma Không Chân" class="phim-poster">
+                <img src="../Anh/phim08.jpg" alt="Lời Mời" class="phim-poster">
             </div>
         </div>
-        </div>
+
         <div class="danh-sach-the-loai">
-            <div class="the-loai">Hành động</div>
-            <div class="ten-loai"> Có thể bạn chưa xem</div>
-            </div>
+            <div class="the-loai">Phổ biến</div>
+            <div class="ten-loai">Top 10 phim bộ hôm nay</div>
+        </div>
         <div class="danh-sach-phim">
             <div class="phim">
-                <img src="/Anh/phim3.jpg" alt="Phim 1" class="phim-poster"></img>
-                <img src="/Anh/phim3.jpg" alt="Phim 1" class="phim-poster"></img>
-                <img src="/Anh/phim3.jpg" alt="Phim 1" class="phim-poster"></img>
+                <img src="../Anh/phim09.jpg" alt="Trò chơi con mực" class="phim-poster">
+                <img src="../Anh/phim10.jpg" alt="Stranger Things" class="phim-poster">
+                <img src="../Anh/phim11.jpg" alt="Wednesday" class="phim-poster">
+                <img src="../Anh/phim12.jpg" alt="The Witcher" class="phim-poster">
+                <img src="../Anh/phim13.jpg" alt="Phi vụ triệu đô" class="phim-poster">
+                <img src="../Anh/phim14.jpg" alt="One Piece" class="phim-poster">
             </div>
         </div>
-        </div>
+
         <div class="danh-sach-the-loai">
             <div class="the-loai">Hành động</div>
-            <div class="ten-loai"> Có thể bạn chưa xem</div>
-            </div>
+            <div class="ten-loai">Phim hành động</div>
+        </div>
         <div class="danh-sach-phim">
             <div class="phim">
-                <img src="/Anh/phim3.jpg" alt="Phim 1" class="phim-poster"></img>
-                <img src="/Anh/phim3.jpg" alt="Phim 1" class="phim-poster"></img>
-                <img src="/Anh/phim3.jpg" alt="Phim 1" class="phim-poster"></img>
+                <img src="../Anh/phim15.jpg" alt="John Wick" class="phim-poster">
+                <img src="../Anh/phim16.jpg" alt="Mad Max: Fury Road" class="phim-poster">
+                <img src="../Anh/phim17.jpg" alt="Nhiệm vụ bất khả thi" class="phim-poster">
+                <img src="../Anh/phim18.jpg" alt="Kỵ sĩ bóng đêm" class="phim-poster">
+                <img src="../Anh/phim19.jpg" alt="Avengers: Endgame" class="phim-poster">
+                <img src="../Anh/phim20.jpg" alt="Gladiator" class="phim-poster">
+                <img src="../Anh/phim21.jpg" alt="Top Gun: Maverick" class="phim-poster">
+                <img src="../Anh/phim22.jpg" alt="Furiosa" class="phim-poster">
+            </div>
+        </div>
+
+        <div class="danh-sach-the-loai">
+            <div class="the-loai">Kinh dị</div>
+            <div class="ten-loai">Phim kinh dị</div>
+        </div>
+        <div class="danh-sach-phim">
+            <div class="phim">
+                <img src="../Anh/phim23.jpg" alt="Ám ảnh kinh hoàng" class="phim-poster">
+                <img src="../Anh/phim24.jpg" alt="It" class="phim-poster">
+                <img src="../Anh/phim25.jpg" alt="Hereditary" class="phim-poster">
+                <img src="../Anh/phim26.jpg" alt="Get Out" class="phim-poster">
+                <img src="../Anh/phim27.jpg" alt="Vùng đất câm lặng" class="phim-poster">
+                <img src="../Anh/phim28.jpg" alt="Vòng tròn tử thần" class="phim-poster">
+                <img src="../Anh/phim29.jpg" alt="Insidious" class="phim-poster">
+                <img src="../Anh/phim30.jpg" alt="Smile" class="phim-poster">
+            </div>
+        </div>
+
+        <div class="danh-sach-the-loai">
+            <div class="the-loai">Tình cảm</div>
+            <div class="ten-loai">Phim tình cảm</div>
+        </div>
+        <div class="danh-sach-phim">
+            <div class="phim">
+                <img src="../Anh/phim31.jpg" alt="Titanic" class="phim-poster">
+                <img src="../Anh/phim32.jpg" alt="La La Land" class="phim-poster">
+                <img src="../Anh/phim33.jpg" alt="The Notebook" class="phim-poster">
+                <img src="../Anh/phim34.jpg" alt="Kiêu hãnh và định kiến" class="phim-poster">
+                <img src="../Anh/phim35.jpg" alt="Before Sunrise" class="phim-poster">
+                <img src="../Anh/phim36.jpg" alt="Crazy Rich Asians" class="phim-poster">
+                <img src="../Anh/phim37.jpg" alt="Me Before You" class="phim-poster">
+                <img src="../Anh/phim38.jpg" alt="Your Name" class="phim-poster">
+            </div>
+        </div>
+
+        <div class="danh-sach-the-loai">
+            <div class="the-loai">Hài hước</div>
+            <div class="ten-loai">Phim hài</div>
+        </div>
+        <div class="danh-sach-phim">
+            <div class="phim">
+                <img src="../Anh/phim39.jpg" alt="Deadpool" class="phim-poster">
+                <img src="../Anh/phim40.jpg" alt="Superbad" class="phim-poster">
+                <img src="../Anh/phim41.jpg" alt="The Hangover" class="phim-poster">
+                <img src="../Anh/phim42.jpg" alt="Free Guy" class="phim-poster">
+                <img src="../Anh/phim43.jpg" alt="Jumanji" class="phim-poster">
+                <img src="../Anh/phim44.jpg" alt="Mrs. Doubtfire" class="phim-poster">
+                <img src="../Anh/phim45.jpg" alt="Grand Budapest Hotel" class="phim-poster">
+                <img src="../Anh/phim46.jpg" alt="Ted" class="phim-poster">
+            </div>
+        </div>
+
+        <div class="danh-sach-the-loai">
+            <div class="the-loai">Hoạt hình</div>
+            <div class="ten-loai">Phim hoạt hình</div>
+        </div>
+        <div class="danh-sach-phim">
+            <div class="phim">
+                <img src="../Anh/phim47.jpg" alt="Frozen" class="phim-poster">
+                <img src="../Anh/phim48.jpg" alt="Encanto" class="phim-poster">
+                <img src="../Anh/phim49.jpg" alt="Spider-Verse" class="phim-poster">
+                <img src="../Anh/phim50.jpg" alt="Inside Out" class="phim-poster">
+                <img src="../Anh/phim51.jpg" alt="Toy Story" class="phim-poster">
+                <img src="../Anh/phim52.jpg" alt="Moana" class="phim-poster">
             </div>
         </div>
     </main>
