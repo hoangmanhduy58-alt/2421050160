@@ -63,8 +63,97 @@
         document.writeln("<br>" );
         document.writeln(hoTen.replace("Duy", "Phuong") );
         document.writeln("<br>" );
-        //
+        // toUpperCase chuyen chuoi thanh chu in hoa
+        document.writeln(hoTen.toUpperCase() );
+        document.writeln("<br>" );
+        // toLocaleLowerCase chuyen chuoi thanh chu thuong
         document.writeln(hoTen.toLocaleLowerCase() );
+        // date
+       // hàm date:
+        var toDay = new Date();
+        document.writeln("<br>"+toDay);
+        var ngay = new Date("8/6/2025");
+        document.writeln("<br>"+ngay);
+
+        var namnay = toDay.getFullYear();
+        document.write("<br>"+namnay);
+
+        var thangnay = toDay.getMonth();
+        document.write("<br>"+thangnay);
+        var homnay = toDay.getDate();
+        document.write("<br>"+thangnay);
+        var thu = toDay.getDay()+1;
+        document.write("<br>Hôm nay là thứ "+thu+" ngày "+homnay+" tháng "+thangnay+" năm "+namnay);
+        // mảng
+        // khai báo
+        var mangso = [1,2,3,4,5];
+        document.writeln("<br>"+mangso[2]);
+        document.writeln("<br>"+mangso.length);
+
+        var mangten = ["Duy", "Phuong", "Hoang Manh"]
+        document.writeln("<br>"+mangten[2]);
+
+        var mang = [1,2,3,4,5,"Duy", "Phuong", "Hoang Manh"]
+        document.writeln("<br>"+mang[5]);
+
+        // phương thức của array
+        var d = mang.concat(mangso, mangten);
+        document.writeln("<br>"+d);
+        document.writeln("<br>"+d.join(" - "));
+        document.writeln("<br>"+d.pop());
+        d.push("Duy");
+        document.write("<br>"+mangso.reverse());
+        //Object
+        var thongTin = {
+            name: "Duy",
+            namSinh: 2006,
+            city: "Ninh Binh",
+            gioiTinh: true
+        }
+        // truy cập thông tin của object
+        document.writeln("<br>"+thongTin.name);
+        document.writeln("<br>"+thongTin.namSinh);
+        document.writeln("<br>"+thongTin.city);
+        tuoi = namnay - thongTin.namSinh;
+        thongTin.tuoi = tuoi;
+        // console log
+        console.log(thongTin);
+        thongTin.gioiTinh = true;
+        var danhSachSinhVien = [
+            {
+                name: "Phuong",
+                namSinh: 2006,
+                city: "Ha Noi"
+            },
+            {
+                name: "Hoang Manh",
+                namSinh: 2005,
+                city: "Nam Dinh"
+            }
+        ];
+        document.writeln("<br>" + danhSachSinhVien[0].name + " - " + danhSachSinhVien[0].namSinh + " - " + danhSachSinhVien[0].city);
+        document.writeln("<br>" + danhSachSinhVien[1].name + " - " + danhSachSinhVien[1].namSinh + " - " + danhSachSinhVien[1].city);
+        console.log(danhSachSinhVien);
+        // ==
+        var so1 = 10;
+        var so2 = "10";
+        document.writeln("<br>" + (so1 == so2)); 
+        // === kiểm tra giá trị và kiểu dữ liệu
+        document.writeln("<br>" + (so1 === so2));
+        if(thu >= 7){
+            document.writeln("<br>Hôm nay được nghỉ");
+        }else if(thu == 6){
+            document.writeln("<br>tối nay đi chơi");
+        }else{
+            document.writeln("<br>Hôm nay ko được nghỉ");
+        }
+        // tìm số chẵn lẻ bất kì
+        var so = 3333333333333333333333333333333;
+        if(so % 2 == 0){
+            document.writeln("<br>Số " + so + " là số chẵn");
+        }else{
+            document.writeln("<br>Số " + so + " là số lẻ");
+        }
     </script>
     <!-- external Javascript -->
     <script src="script.js"></script>
