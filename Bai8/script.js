@@ -1,3 +1,3 @@
-document.write("<br> Hello World 2");
-var name = "Duy Hoang";
-document.write("<br> Name: " + name);
+document.write("<br> ");
+var name = "Hết Bài 8";
+document.write("<br>-------------------------------- "+ name+" --------------------------------<br>");

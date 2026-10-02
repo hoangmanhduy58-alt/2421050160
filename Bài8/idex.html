@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function
+        function xinChao(){
+            document.write("<br>xin chào");
+        }
+        xinChao();
+        // function với tham số
+        function xinChao(ten){
+            document.write("<br>xin chào "+ten);
+        }
+        xinChao("Duy Hoàng");
+        xinChao( "Phuong");
+        // sử dụng function với popup box tính tổng của 2 số và trước khi tính phải kiểm tra đó có phải là số không
+        function tinhTong(so1, so2){
+            
+            if(isNaN(so1)==false && isNaN(so2)==false){
+                alert("Vui lòng nhập số");
+                so1 = prompt("nhập số thứ nhất");
+                so2 = prompt("nhập số thứ hai");
+                return so1 + so2;
+            }
+            return so1 + so2;
+        }
+        var tong = tinhTong();
+        document.write("<br>Tổng của 2 số là: "+tinhTong);
+
+    </script>
+</body>
+</html>

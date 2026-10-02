@@ -117,7 +117,7 @@
         tuoi = namnay - thongTin.namSinh;
         thongTin.tuoi = tuoi;
         // console log
-        console.log(thongTin);
+        
         thongTin.gioiTinh = true;
         var danhSachSinhVien = [
             {
@@ -133,7 +133,7 @@
         ];
         document.writeln("<br>" + danhSachSinhVien[0].name + " - " + danhSachSinhVien[0].namSinh + " - " + danhSachSinhVien[0].city);
         document.writeln("<br>" + danhSachSinhVien[1].name + " - " + danhSachSinhVien[1].namSinh + " - " + danhSachSinhVien[1].city);
-        console.log(danhSachSinhVien);
+    
         // ==
         var so1 = 10;
         var so2 = "10";
@@ -148,14 +148,84 @@
             document.writeln("<br>Hôm nay ko được nghỉ");
         }
         // tìm số chẵn lẻ bất kì
-        var so = 3333333333333333333333333333333;
-        if(so % 2 == 0){
-            document.writeln("<br>Số " + so + " là số chẵn");
-        }else{
-            document.writeln("<br>Số " + so + " là số lẻ");
+        // var so = 3333333333333333333333333333333n;
+        // var dodai = so.toString().length;
+        // var soCuoi = so.toString()[dodai - 1];
+        // if(soCuoi % 2n === 0n){
+        //     document.writeln("<br>Số " + so + " có " + dodai + " chữ số và là số chẵn");
+        // }else{
+        //     document.writeln("<br>Số " + so + " có " + dodai + " chữ số và là số lẻ");
+        // }
+        document.writeln("<br>------------------------------------------------------------------------------");
+        // switch case
+        var day = new Date().getDay();
+        switch(day){
+            case 0:
+                document.writeln("<br>Hôm nay là chủ nhật");
+                break;
+            case 5:
+                document.writeln("<br>Hôm nay là thứ sáu");
+                break;
+            case 6:
+                document.writeln("<br>Hôm nay là thứ bảy");
+                break;
+            default:
+                document.writeln("<br>Không phải là thứ trong tuần");
         }
-    </script>
+        // for
+        for(var index = 1; index <= 10; index++){
+            document.writeln("<br>");
+            document.writeln("<br>Duy Hoàng"+index);
+        }
+        // mang với for
+        for(var mangso = 0; mangso < mangso.length; mangso++){
+            document.writeln("<br>");
+            document.writeln("<br>Duy Hoàng"+mangso);
+        } 
+        // cho vong lập for với if và else lọc mảng nếu là chữ số thì in ra xin chào và nếu là chữ thì in chữ đấy
+        for(var mang = 0; mang < mang.length; mang++){
+            if(mang % 2 == 0){
+                document.writeln("<br>Duy Hoàng"+mang);
+            }else{
+                document.writeln("<br>Duy Hoàng"+mang);
+            }
+        }
+        // while
+        var index = 1;
+        while(index <= 10){
+            document.writeln("<br>");
+            document.writeln("<br>bạn thật tuyệt vời"+index);
+            index++;
+        }
+        // do while
+        var index = 1;
+        do{
+            document.writeln("<br>");
+            document.writeln("<br> xin chào "+index);
+            index++;
+        }while(index <= 10);
+        // popup boxex alert, confirm, prompt
+        alert("xin chào");
+
+       var i= confirm("bạn có muốn thoát không");
+       if(i){
+        document.write("<br>bạn đã thoát");
+       }else{
+        document.write("<br>bạn đã không thoát");
+       }
+        var r=prompt("nhập tên của bạn");
+        document.write("<br>"+r);
+        // function
+        function xinChao(){
+            document.write("<br>xin chào");
+        }
+        xinChao();
+        // function với tham số
+        function xinChao(ten){
+            document.write("<br>xin chào "+ten);
+        }
+   </script>
     <!-- external Javascript -->
     <script src="script.js"></script>
 </body>
-</html
+</html>
