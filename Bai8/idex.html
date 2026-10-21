@@ -6,224 +6,93 @@
     <title>Javascript</title>
 </head>
 <body>
+    <div>
+        <h1>Nhập điểm</h1>
+    <div>
+        <p>Điểm A: <input type="number" id="diemA" min="0" max="10" step="0.1" oninput="tinhDiemTong()"> <span class="chu" id="chuA"></span></p>
+    </div>
+    <div>
+        <p>Điểm B: <input type="number" id="diemB" min="0" max="10" step="0.1" oninput="tinhDiemTong()"> <span class="chu" id="chuB"></span></p>
+    </div>
+    <div>
+        <p>Điểm C: <input type="number" id="diemC" min="0" max="10" step="0.1" oninput="tinhDiemTong()"> <span class="chu" id="chuC"></span></p>
+    </div>
+    <button onclick="tinhDiemTong()">Tính điểm tổng</button>
+    <div id="ketQuaTong">
+    </div>
+    <h2>Nhập năm sinh</h2>
+    <div>
+        <p>Năm sinh: <input type="number" id="namSinh" min="1900" max="2026" step="1" oninput="tinhTuoi()"> <span id="tuoi"></span></p>
+    </div>
+    <button onclick="tinhTuoi()">Tính tuổi</button>
+    <div id="ketQuaTuoi">
+    </div>
+
     <!-- internal Javascript -->
     <script>
-        // in ra màn hình 
-        document.write("Hello World ");
-        var ten = "Duy ";
-        ten = "Duy ";
-        document.write("<br>" + ten);
         
-        var nam = 2026;
-        document.write("<br>Year: " + nam);
-        // phep toan
-        // phep cong
-        var a = 10;
-        var b = 20;
-        var tong = a + b;
-        document.write("<br>Tong: " + tong);
-        // phep tru
-        var hieu = a - b;
-        document.write("<br>Hieu: " + hieu);
-        // phep nhan
-        var tich = a * b;
-        document.write("<br>Tich: " + tich);
-        // phep chia
-        var thuong = a / b;
-        document.write("<br>Thuong: " + thuong);
-        // %
-        var phanTram = a % b;
-        document.write("<br>Phan Tram: " + phanTram);
-        //++
-        document.writeln("<br>" );
-        document.writeln(++ a);
-        // -- tuong tu ++
-        a+=b;
-        document.writeln("<br>");
-        document.writeln(a);
-        a-=b;
-        document.writeln("<br>");
-        document.writeln(a);
-        var ho = "Hoang";
-        document.writeln("<br>"+ ho+ " "+ten );
-        document.writeln("<br>" );
-        document.writeln(ho.length );
-        document.writeln("<br>" );
-        // typeof kiem tra kieu du lieu
-        document.writeln(typeof(ho ));
-        document.writeln("<br>" );
-        // indexOf tim vi tri cua ky tu trong chuoi
-        var hoTen = " Hoang Manh Duy";
-        document.writeln(hoTen.indexOf("D") );
-        document.writeln("<br>" );
-        // includes kiem tra chuoi co chua ky tu hay khong
-        document.writeln(hoTen.includes("P") );
-        document.writeln("<br>" );
-        document.writeln(hoTen.startsWith("H") );
-        document.writeln("<br>" );
-        document.writeln(hoTen.replace("Duy", "Phuong") );
-        document.writeln("<br>" );
-        // toUpperCase chuyen chuoi thanh chu in hoa
-        document.writeln(hoTen.toUpperCase() );
-        document.writeln("<br>" );
-        // toLocaleLowerCase chuyen chuoi thanh chu thuong
-        document.writeln(hoTen.toLocaleLowerCase() );
-        // date
-       // hàm date:
-        var toDay = new Date();
-        document.writeln("<br>"+toDay);
-        var ngay = new Date("8/6/2025");
-        document.writeln("<br>"+ngay);
-
-        var namnay = toDay.getFullYear();
-        document.write("<br>"+namnay);
-
-        var thangnay = toDay.getMonth();
-        document.write("<br>"+thangnay);
-        var homnay = toDay.getDate();
-        document.write("<br>"+thangnay);
-        var thu = toDay.getDay()+1;
-        document.write("<br>Hôm nay là thứ "+thu+" ngày "+homnay+" tháng "+thangnay+" năm "+namnay);
-        // mảng
-        // khai báo
-        var mangso = [1,2,3,4,5];
-        document.writeln("<br>"+mangso[2]);
-        document.writeln("<br>"+mangso.length);
-
-        var mangten = ["Duy", "Phuong", "Hoang Manh"]
-        document.writeln("<br>"+mangten[2]);
-
-        var mang = [1,2,3,4,5,"Duy", "Phuong", "Hoang Manh"]
-        document.writeln("<br>"+mang[5]);
-
-        // phương thức của array
-        var d = mang.concat(mangso, mangten);
-        document.writeln("<br>"+d);
-        document.writeln("<br>"+d.join(" - "));
-        document.writeln("<br>"+d.pop());
-        d.push("Duy");
-        document.write("<br>"+mangso.reverse());
-        //Object
-        var thongTin = {
-            name: "Duy",
-            namSinh: 2006,
-            city: "Ninh Binh",
-            gioiTinh: true
+        function tinhDiemTong(){
+            var diemA = parseFloat(document.getElementById("diemA").value);
+            var diemB = parseFloat(document.getElementById("diemB").value);
+            var diemC = parseFloat(document.getElementById("diemC").value);
+            document.getElementById("chuA").innerHTML = isNaN(diemA) ? "" : diemChu(diemA);
+            document.getElementById("chuB").innerHTML = isNaN(diemB) ? "" : diemChu(diemB);
+            document.getElementById("chuC").innerHTML = isNaN(diemC) ? "" : diemChu(diemC);
+            if(isNaN(diemA) || isNaN(diemB) || isNaN(diemC)){
+                document.getElementById("ketQuaTong").innerHTML = "";
+                return;
+            }
+            if(diemA < 0 || diemA > 10 || diemB < 0 || diemB > 10 || diemC < 0 || diemC > 10){
+                document.getElementById("ketQuaTong").innerHTML = "Điểm phải từ 0 đến 10";
+                return "nhap lai diem A, B, C trong khoảng 0 đến 10";
+            }
+            var tong = diemA*0.6 + diemB*0.3 + diemC*0.1;
+            document.getElementById("ketQuaTong").innerHTML = "Điểm A: " + diemA + "<br>Điểm B: " + diemB + "<br>Điểm C: " + diemC + "<br>Điểm tổng: " + tong + " - Điểm chữ: " + diemChu(tong);
         }
-        // truy cập thông tin của object
-        document.writeln("<br>"+thongTin.name);
-        document.writeln("<br>"+thongTin.namSinh);
-        document.writeln("<br>"+thongTin.city);
-        tuoi = namnay - thongTin.namSinh;
-        thongTin.tuoi = tuoi;
-        // console log
+         function diemChu(diem){
+            if(diem < 0 || diem > 10){
+                return "Không hợp lệ";
+            }else if(diem >= 9 && diem <= 10){
+                return "A+";
+            }else if(diem >= 8.5){
+                return "A";
+            }else if(diem >= 8){
+                return "B+";
+            }else if(diem >= 7){
+                return "B";
+            }else if(diem >= 6.5){
+                return "C+";
+            }else if(diem >= 5.5){
+                return "C";
+            }else if(diem >= 5){
+                return "D+";
+            }else if(diem >= 4){
+                return "D";
+            }else if(diem >= 0){
+                return "F";
+            }
+            return "Không hợp lệ"; 
+        }
+        function tinhTuoi(){
+            var namSinh = parseInt(document.getElementById("namSinh").value);
+            var namNay = new Date().getFullYear();
+            if(isNaN(namSinh)){
+                document.getElementById("tuoi").innerHTML = "";
+                document.getElementById("ketQuaTuoi").innerHTML = "";
+                return;
+            }
+            if(namSinh < 1900 || namSinh > namNay){
+                document.getElementById("tuoi").innerHTML = "Không hợp lệ";
+                document.getElementById("ketQuaTuoi").innerHTML = "Năm sinh phải từ 1900 đến " + namNay;
+                return;
+            }
+            var tuoi = namNay - namSinh;
+            document.getElementById("tuoi").innerHTML = tuoi + " tuổi";
+            document.getElementById("ketQuaTuoi").innerHTML = "Năm sinh: " + namSinh + "<br>Tuổi: " + tuoi;
+        }
         
-        thongTin.gioiTinh = true;
-        var danhSachSinhVien = [
-            {
-                name: "Phuong",
-                namSinh: 2006,
-                city: "Ha Noi"
-            },
-            {
-                name: "Hoang Manh",
-                namSinh: 2005,
-                city: "Nam Dinh"
-            }
-        ];
-        document.writeln("<br>" + danhSachSinhVien[0].name + " - " + danhSachSinhVien[0].namSinh + " - " + danhSachSinhVien[0].city);
-        document.writeln("<br>" + danhSachSinhVien[1].name + " - " + danhSachSinhVien[1].namSinh + " - " + danhSachSinhVien[1].city);
-    
-        // ==
-        var so1 = 10;
-        var so2 = "10";
-        document.writeln("<br>" + (so1 == so2)); 
-        // === kiểm tra giá trị và kiểu dữ liệu
-        document.writeln("<br>" + (so1 === so2));
-        if(thu >= 7){
-            document.writeln("<br>Hôm nay được nghỉ");
-        }else if(thu == 6){
-            document.writeln("<br>tối nay đi chơi");
-        }else{
-            document.writeln("<br>Hôm nay ko được nghỉ");
-        }
-        // tìm số chẵn lẻ bất kì
-        // var so = 3333333333333333333333333333333n;
-        // var dodai = so.toString().length;
-        // var soCuoi = so.toString()[dodai - 1];
-        // if(soCuoi % 2n === 0n){
-        //     document.writeln("<br>Số " + so + " có " + dodai + " chữ số và là số chẵn");
-        // }else{
-        //     document.writeln("<br>Số " + so + " có " + dodai + " chữ số và là số lẻ");
-        // }
-        document.writeln("<br>------------------------------------------------------------------------------");
-        // switch case
-        var day = new Date().getDay();
-        switch(day){
-            case 0:
-                document.writeln("<br>Hôm nay là chủ nhật");
-                break;
-            case 5:
-                document.writeln("<br>Hôm nay là thứ sáu");
-                break;
-            case 6:
-                document.writeln("<br>Hôm nay là thứ bảy");
-                break;
-            default:
-                document.writeln("<br>Không phải là thứ trong tuần");
-        }
-        // for
-        for(var index = 1; index <= 10; index++){
-            document.writeln("<br>");
-            document.writeln("<br>Duy Hoàng"+index);
-        }
-        // mang với for
-        for(var mangso = 0; mangso < mangso.length; mangso++){
-            document.writeln("<br>");
-            document.writeln("<br>Duy Hoàng"+mangso);
-        } 
-        // cho vong lập for với if và else lọc mảng nếu là chữ số thì in ra xin chào và nếu là chữ thì in chữ đấy
-        for(var mang = 0; mang < mang.length; mang++){
-            if(mang % 2 == 0){
-                document.writeln("<br>Duy Hoàng"+mang);
-            }else{
-                document.writeln("<br>Duy Hoàng"+mang);
-            }
-        }
-        // while
-        var index = 1;
-        while(index <= 10){
-            document.writeln("<br>");
-            document.writeln("<br>bạn thật tuyệt vời"+index);
-            index++;
-        }
-        // do while
-        var index = 1;
-        do{
-            document.writeln("<br>");
-            document.writeln("<br> xin chào "+index);
-            index++;
-        }while(index <= 10);
-        // popup boxex alert, confirm, prompt
-        alert("xin chào");
+        
 
-       var i= confirm("bạn có muốn thoát không");
-       if(i){
-        document.write("<br>bạn đã thoát");
-       }else{
-        document.write("<br>bạn đã không thoát");
-       }
-        var r=prompt("nhập tên của bạn");
-        document.write("<br>"+r);
-        // function
-        function xinChao(){
-            document.write("<br>xin chào");
-        }
-        xinChao();
-        // function với tham số
-        function xinChao(ten){
-            document.write("<br>xin chào "+ten);
-        }
    </script>
     <!-- external Javascript -->
     <script src="script.js"></script>
