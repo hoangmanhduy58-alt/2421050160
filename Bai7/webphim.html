@@ -4,107 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web phim</title>
-    <style>
-        body {
-            color: #fff;
-            background: #2F2C38;
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-        .danh-sach-muc {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-            align-items: center;
-            padding: 0;
-            margin: 0;
-            flex-wrap: wrap;
-        }
-        .lien-ket-muc {
-            color: #fff;
-            text-decoration: none;
-        }
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-        }
-        .muc {
-            padding: 10px;
-            border-radius: 25px;
-        }
-        .muc:hover {
-            background: #fff;
-            color: #2F2C38;
-        }
-        .muc:hover .lien-ket-muc {
-            color: #2F2C38;
-        }
-        .logo {
-            width: 50px;
-            height: 30px;
-        }
-        .avata {
-            width: 40px;
-            height: 40px;
-            border-radius: 10px;
-            object-fit: cover;
-        }
-        .dang-chon {
-            color: #fff;
-            background: #2F2C38;
-        }
-        .banner {
-            width: 95%;
-            border-radius: 20px;
-            margin: 20px auto;
-        }
-        .banner-anh {
-            width: 100%;
-            height: 320px;
-            object-fit: cover;
-            border-radius: 20px;
-            display: block;
-        }
-        .danh-sach-the-loai {
-            width: 95%;
-            margin: 20px auto 10px;
-            display: flex;
-            gap: 20px;
-            align-items: baseline;
-        }
-        .the-loai {
-            font-size: 14px;
-            color: #bbb;
-        }
-        .ten-loai {
-            font-size: 22px;
-            font-weight: bold;
-        }
-        .danh-sach-phim {
-            width: 95%;
-            margin: 0 auto 30px;
-        }
-        .phim {
-            display: flex;
-            gap: 14px;
-            align-items: flex-start;
-            overflow-x: auto;
-            padding-bottom: 8px;
-        }
-        .phim-poster {
-            width: 140px;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 15px;
-            flex-shrink: 0;
-            background: #1a1820;
-        }
-        .phim-poster:hover {
-            outline: 2px solid #fff;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -129,10 +29,17 @@
     </header>
 
     <main>
+        <!-- Banner -->
         <div class="banner">
-            <img class="banner-anh" src="../Anh/banner1.jpg" alt="Banner">
+            <img class="banner-anh" src="../Anh/banner1.jpg" alt="Banner" onclick="hienThiBannerVideo()" style="cursor: pointer;">
         </div>
-
+        <!-- Banner video -->
+        <div style = "display: none;" class="banner">
+            <iframe class="banner-anh" src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+            title="YouTube video player" frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
         <div class="danh-sach-the-loai">
             <div class="the-loai">Gợi ý</div>
             <div class="ten-loai">Có thể bạn chưa xem</div>
@@ -247,6 +154,74 @@
                 <img src="../Anh/phim52.jpg" alt="Moana" class="phim-poster">
             </div>
         </div>
+
+        <div class="danh-sach-the-loai">
+            <div class="the-loai">Yêu thích</div>
+            <div class="ten-loai">Nhân vật</div>
+        </div>
+        <div class="danh-sach-phim">
+            <div class="nhan-vat">
+                <a href="#" class="the-nhan-vat">
+                    <img src="../Anh/nhanvat01.png" alt="Scooby-Doo" class="anh-nhan-vat mau-vang">
+                    <div class="ten-nhan-vat">Scooby-Doo</div>
+                </a>
+                <a href="#" class="the-nhan-vat">
+                    <img src="../Anh/nhanvat02.png" alt="Doraemon" class="anh-nhan-vat mau-cam">
+                    <div class="ten-nhan-vat">Doraemon</div>
+                </a>
+                <a href="#" class="the-nhan-vat">
+                    <img src="../Anh/nhanvat03.png" alt="Jinx" class="anh-nhan-vat mau-xanh-la">
+                    <div class="ten-nhan-vat">Jinx</div>
+                </a>
+                <a href="#" class="the-nhan-vat">
+                    <img src="../Anh/nhanvat04.png" alt="Shrek" class="anh-nhan-vat mau-xanh-duong">
+                    <div class="ten-nhan-vat">Shrek</div>
+                </a>
+                <a href="#" class="the-nhan-vat">
+                    <img src="../Anh/nhanvat05.png" alt="Pikachu" class="anh-nhan-vat mau-hong">
+                    <div class="ten-nhan-vat">Pikachu</div>
+                </a>
+                <a href="#" class="the-nhan-vat">
+                    <img src="../Anh/nhanvat06.png" alt="SpongeBob" class="anh-nhan-vat mau-xanh-duong">
+                    <div class="ten-nhan-vat">SpongeBob</div>
+                </a>
+                <a href="#" class="the-nhan-vat">
+                    <img src="../Anh/nhanvat07.png" alt="Mickey Mouse" class="anh-nhan-vat mau-cam">
+                    <div class="ten-nhan-vat">Mickey Mouse</div>
+                </a>
+                <a href="#" class="the-nhan-vat">
+                    <img src="../Anh/nhanvat08.png" alt="Sonic" class="anh-nhan-vat mau-vang">
+                    <div class="ten-nhan-vat">Sonic</div>
+                </a>
+                <a href="#" class="the-nhan-vat">
+                    <img src="../Anh/nhanvat09.png" alt="Wednesday" class="anh-nhan-vat mau-do">
+                    <div class="ten-nhan-vat">Wednesday</div>
+                </a>
+                <a href="#" class="the-nhan-vat">
+                    <img src="../Anh/nhanvat10.png" alt="Po - Kung Fu Panda" class="anh-nhan-vat mau-hong">
+                    <div class="ten-nhan-vat">Po</div>
+                </a>
+            </div>
+        </div>
     </main>
+
+    <footer>
+        <ul class="chan-trang-lien-ket">
+            <li><a href="#">Mô tả âm thanh</a></li>
+            <li><a href="#">Thẻ quà tặng</a></li>
+            <li><a href="#">Trung tâm đa phương tiện</a></li>
+            <li><a href="#">Quan hệ với nhà đầu tư</a></li>
+            <li><a href="#">Việc làm</a></li>
+            <li><a href="#">Điều khoản sử dụng</a></li>
+            <li><a href="#">Quyền riêng tư</a></li>
+            <li><a href="#">Thông báo pháp lý</a></li>
+            <li><a href="#">Tùy chọn cookie</a></li>
+            <li><a href="#">Thông tin doanh nghiệp</a></li>
+            <li><a href="#">Liên hệ với chúng tôi</a></li>
+            <li><a href="#">Giới thiệu</a></li>
+        </ul>
+        <p class="ban-quyen">© 1997-2026 Netflix, Inc.</p>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
