@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ví dụ đổi video</title>
+    <style>
+        .video{
+            width:50%;
+            height:500px;
+            margin:auto;
+            background-color:antiquewhite;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+
+        .danh-sach{
+            width:80%;
+            display:flex;
+            margin:auto;
+            justify-content:space-between;
+        }
+
+        .anh{
+            width:24%;
+            height:100px;
+            background-color:aqua;
+        }
+        .anh img{
+            width:100%;
+            height:100%;
+            object-fit:cover;
+        }
+    </style>
+</head>
+<body>
+    <!-- màn xem -->
+    <div class="video-container">
+        <iframe class="video" width="560" height="315" src="https://www.youtube.com/embed/V0tJLc3knEA" title="TOP 20 NHẠC DRILL HOT NHẤT HIỆN NAY: Địa Ngục Trần Gian, Thương Nhau Đến Thế,Anh Vội Quên,Thủy Chung" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <h3 class="tên"></h3>
+    </div>
+
+     <div class="danh-sach">
+        <div class="anh" onclick="chonVid(1)">
+            <img src="../Anh/ảnh1.webp" alt="">
+            <p>Nhà tinh hoa</p>
+        </div>
+
+        <div class="anh" onclick="chonVid(2)">
+            <img src="/Anh/ảnh 2.webp" alt="">
+            <p>Mẹ yêu con</p>
+        </div>
+
+        <div class="anh" onclick="chonVid(3)">
+            <img src="../Anh/ảnh3.webp" alt="">
+            <p>Con rồng cháu tiên</p>
+        </div>
+
+        <div class="anh" onclick="chonVid(4)">
+            <img src="../Anh/ảnh4.webp" alt="">
+            <p>Nhạc drill</p>
+        </div>
+     </div>
+     <script>
+        var danhSachvideo = [
+            {
+                id: 1,
+                tên: "Nhà tinh hoa",
+                ảnh: "../Anh/ảnh1.webp",
+                url: "https://www.youtube.com/embed/_lIu6T3Bp2I?list=RD_lIu6T3Bp2I"
+            },
+            
+            {
+                id: 2,
+                tên: "Mẹ yêu con",
+                ảnh: "../Anh/ảnh2.webp",
+                url: "https://www.youtube.com/embed/_lIu6T3Bp2I?list=RD_lIu6T3Bp2I"
+            },
+
+            {
+                id: 3,
+                tên: "Con rồng cháu tiên",
+                ảnh: "../Anh/ảnh3.webp",
+                url: "https://youtu.be/4CI52V3lQTA?si=WWVJNnfxWXjiTv7e"
+            },
+            
+            {
+                id: 4,
+                tên: "Nhạc drill",
+                ảnh: "../Anh/ảnh4.webp",
+                url: "https://youtu.be/RYx_9IMrA_0?si=u4LRoBPmK4UbJpsI"
+            },  
+        ];
+        function chonVid(id){
+            for(let i = 0; i < danhSachvideo.length; i++){
+                if(danhSachvideo[i].id == id){
+                document.getElementsByClassName("tên")[0].innerHTML = danhSachvideo[i].tên;
+                document.getElementsByTagName("iframe")[0].src = danhSachvideo[i].url;
+                }
+            }
+        }
+        chonVid(1);
+    </script>
+</body>
+</html>
