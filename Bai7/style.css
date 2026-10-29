@@ -98,6 +98,9 @@ header {
 .phim-poster:hover {
     outline: 2px solid #fff;
 }
+.phim-poster[onclick] {
+    cursor: pointer;
+}
 .nhan-vat {
     display: flex;
     gap: 20px;
