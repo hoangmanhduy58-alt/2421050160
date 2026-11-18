@@ -1,3 +1,25 @@
+<?php
+session_start();
+include 'conmect.php';
+
+$thongbao = "";
+if (isset($_POST['tendangnhap']) && isset($_POST['matkhau'])) {
+    $tendangnhap = $_POST['tendangnhap'];
+    $matkhau = $_POST['matkhau'];
+    $sql = "SELECT id FROM nguoidung WHERE ten_dang_nhap = ? AND mat_khau = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ss", $tendangnhap, $matkhau);
+    $stmt->execute();
+    $stmt->store_result();
+    if ($stmt->num_rows > 0) {
+        $_SESSION['tendangnhap'] = "thành công";
+        header("Location: index.php");
+        exit;
+    } else {
+        $thongbao = "tên đăng nhập hoặc mật khẩu không đúng";
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,16 +63,8 @@
         </div>
     </div>
     <?php
-    if(isset($_POST['tendangnhap']) && isset($_POST['matkhau'])) {
-        $tendangnhap = $_POST['tendangnhap'];
-        $matkhau = $_POST['matkhau'];
-        if($tendangnhap == "admin" && $matkhau == "123456") {
-            session_start();
-            $_SESSION['tendangnhap'] = "thành công";
-            header("Location: trangadmin.php");
-        } else {
-            echo "Đăng nhập thất bại";
-        }
+    if ($thongbao !== "") {
+        echo $thongbao;
     }
     ?>
 </body>
