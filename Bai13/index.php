@@ -65,6 +65,12 @@ if (!isset($_SESSION['tendangnhap']) || $_SESSION['tendangnhap'] != "thành côn
             case 'themtaikhoan':
                 include 'themtaikhoan.php';
                 break;
+            case 'suataikhoan':
+                include 'suataikhoan.php';
+                break;
+            case 'xoataikhoan':
+                include 'xoataikhoan.php';
+                break;
         }
     }
     ?>
