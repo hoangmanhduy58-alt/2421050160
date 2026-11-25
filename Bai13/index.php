@@ -21,6 +21,7 @@ if (!isset($_SESSION['tendangnhap']) || $_SESSION['tendangnhap'] != "thành côn
             padding: 0px;
             border-radius: 20px;
         }
+        
        a {
         text-decoration: none;
         color: #fff;
@@ -71,8 +72,26 @@ if (!isset($_SESSION['tendangnhap']) || $_SESSION['tendangnhap'] != "thành côn
             case 'xoataikhoan':
                 include 'xoataikhoan.php';
                 break;
+            case 'themdanhmuc':
+                include 'themdanhmuc.php';
+                break;
+            case 'suadanhmuc':
+                include 'suadanhmuc.php';
+                break;
+            case 'xoadanhmuc':
+                include 'xoadanhmuc.php';
+                break;
+            case 'themphim':
+                include 'themphim.php';
+                break;
+            case 'suaphim':
+                include 'suaphim.php';
+                break;
+            case 'xoaphim':
+                include 'xoaphim.php';
+                break;
         }
     }
     ?>
 </body>
-</html> 
+</html>
