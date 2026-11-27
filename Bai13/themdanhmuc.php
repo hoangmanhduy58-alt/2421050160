@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        /* Khung form thêm thể loại */
         .khoi{
             border: 1px solid black;
             border-radius: 10px;
@@ -45,6 +46,7 @@
 
     <?php
         include_once __DIR__ . '/conmect.php';
+        // Chỉ thêm khi form đã gửi tên thể loại
         if(isset($_POST['tenTheLoai']))
         {
             $tenTheLoai = $_POST['tenTheLoai'];

@@ -1,10 +1,11 @@
 <?php
-    //session
-    session_start(); //bắt đầu session
+    // Bắt đầu session và gán một giá trị mẫu
+    session_start();
     $_SESSION['Name'] = "User";
 
     include_once __DIR__ . '/conmect.php';
 
+    // Danh sách phim mẫu, chỉ thêm vào database nếu tên chưa có
     $danhSachPhim = [
         "Hải Mộ Tầm Long",
         "Những Ngả Đường Ước Mơ",
@@ -60,6 +61,7 @@
         "Moana",
     ];
 
+    // Danh sách diễn viên mẫu
     $danhSachNhanVat = [
         "Scooby-Doo",
         "Doraemon",
@@ -73,6 +75,7 @@
         "Po",
     ];
 
+    // Kiểm tra từng tên phim, chưa có thì thêm mới
     $kiemTraPhim = $conn->prepare("SELECT id FROM phim WHERE ten_phim = ?");
     $themPhim = $conn->prepare("INSERT INTO phim (ten_phim) VALUES (?)");
     foreach ($danhSachPhim as $tenPhim) {
@@ -88,6 +91,7 @@
     $kiemTraPhim->close();
     $themPhim->close();
 
+    // Kiểm tra từng diễn viên, chưa có thì thêm mới
     $kiemTraNhanVat = $conn->prepare("SELECT id FROM dien_vien WHERE ho_ten = ?");
     $themNhanVat = $conn->prepare("INSERT INTO dien_vien (ho_ten) VALUES (?)");
     foreach ($danhSachNhanVat as $tenNhanVat) {
@@ -105,29 +109,19 @@
 
     echo "Session Name: ", $_SESSION['Name'];
 
-    // cookieName: Tên cookie	Tên định danh của cookie (ví dụ: "user", "theme").  
-    // sẽ dùng tên này để gọi lại cookie bằng lệnh $_COOKIE[$cookieName].
-    // $cookieValue: Giá trị cookie	Nội dung dữ liệu  muốn lưu trữ (ví dụ: "JohnDoe", "dark_mode").
-    //  Giá trị này được lưu dưới dạng chuỗi (string).
-    //  time() + 86400:	Thời gian hết hạn. Xác định thời điểm cookie tự động xóa. 
-    // time() lấy thời gian hiện tại tính bằng giây, cộng thêm 86400 giây (tương đương 24 giờ hoặc 1 ngày). 
-    // Nếu không đặt tham số này, cookie sẽ mất ngay khi đóng trình duyệt.
-    // "/":	Đường dẫn áp dụng	Đường dẫn trên máy chủ mà cookie có hiệu lực. 
-    // Dấu gạch chéo / nghĩa là cookie này sẽ có tác dụng trên toàn bộ trang web (tất cả các thư mục và trang con).
-
+    // cookieName: tên cookie, dùng lại bằng $_COOKIE[$cookieName]
+    // cookieValue: nội dung muốn lưu, luôn là chuỗi
+    // time() + 86400: cookie hết hạn sau 86400 giây, tức 1 ngày
+    // "/": cookie có hiệu lực trên toàn bộ website
     $cookieName = "user";
     $cookieValue = "kien";
 
     setcookie($cookieName, $cookieValue, time() + 86400, "/");
+    // Cookie vừa set chỉ đọc được từ lần tải trang sau
     if(isset($_COOKIE[$cookieName])){
         echo "cookie đã tồn tại";
 
     }else{
         echo "cookie chưa đc thiết lập !";
     }
-
-
-
-
-
 ?>

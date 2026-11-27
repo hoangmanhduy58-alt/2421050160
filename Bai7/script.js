@@ -1,3 +1,4 @@
+if (typeof danhSachPhim === "undefined") {
 var danhSachPhim = 
     {
         phim:[
@@ -427,16 +428,33 @@ var danhSachPhim =
             },
         ]
     }
+}
 function hienThiBannerVideo() {
     document.getElementsByClassName("banner")[0].style.display = "none";
     document.getElementsByClassName("banner")[1].style.display = "block";
 }
 function chonPhim(id){
     var ds = danhSachPhim.phim;
+    var iframe = document.getElementsByTagName("iframe")[0];
+    var video = document.getElementById("banner-video");
     for(var i = 0; i < ds.length; i++){
         if(ds[i].id == id){
-            document.getElementsByTagName("iframe")[0].src = ds[i].url;
+            var nguon = ds[i].url || ds[i].trailer || "";
+            var laFile = /\.(mp4|webm|mov)(\?|$)/i.test(nguon);
+            if (video && laFile) {
+                iframe.style.display = "none";
+                video.style.display = "block";
+                video.src = nguon;
+            } else if (iframe) {
+                if (video) {
+                    video.pause();
+                    video.style.display = "none";
+                }
+                iframe.style.display = "block";
+                iframe.src = nguon;
+            }
             hienThiBannerVideo();
+            break;
         }
     }
 }

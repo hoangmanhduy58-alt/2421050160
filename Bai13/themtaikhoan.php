@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        /* Khung form thêm tài khoản */
         .khoi{
             border: 1px solid black;
             border-radius: 10px;
@@ -37,6 +38,7 @@
 </head>
 <body>
     <h1>Thêm tài khoản</h1>
+    <!-- value 0 là Nam, value 1 là Nữ -->
     <form class="khoi" action="index.php?page=themtaikhoan" method="POST">
         <div class="i-text">
             <input type="text" name="tenDangNhap" id="" placeholder="Tên đăng nhập">
@@ -45,18 +47,21 @@
             <input type="password" name="matKhau" id="" placeholder="Mật khẩu">
         </div>
         <div class="i-text">
+            <!-- type="email": ô nhập email -->
             <input type="email" name="email" id="" placeholder="Email">
         </div>
         <div class="i-text">
             <input type="text" name="hoten" id="" placeholder="Họ và tên">
         </div>
         <div class="i-text">
+            <!-- type="date": ô chọn ngày -->
             <input type="date" name="ngaysinh" id="" placeholder="Ngày sinh">
         </div>
         <div class="i-text">
             <input type="text" name="sdt" id="" placeholder="Số điện thoại">
         </div>
         <div class="">
+            <!-- type="radio": chọn một trong các ô cùng name. checked là ô được chọn sẵn -->
             <input type="radio" name="gioitinh" id="" value="0" checked> Nam
             <input type="radio" name="gioitinh" id="" value="1"> Nữ
         </div>
@@ -65,6 +70,7 @@
 
     <?php
         include_once __DIR__ . '/conmect.php';
+        // Chỉ thêm khi form gửi đủ các trường bắt buộc
         if(isset($_POST['tenDangNhap']) &&
            isset($_POST['matKhau']) &&
            isset($_POST['email']) &&
@@ -79,6 +85,7 @@
             $ngaysinh = $_POST['ngaysinh'];
             $sdt = $_POST['sdt'];
             $gioitinh = $_POST['gioitinh'];
+            // Giới tính 0 vẫn hợp lệ dù empty() coi chuỗi "0" là rỗng
             if(!empty($tenDangNhap) &&
                 !empty($matKhau) &&
                 !empty($email) &&

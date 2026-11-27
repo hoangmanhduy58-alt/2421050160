@@ -1,5 +1,6 @@
 <?php
 include_once __DIR__ . '/conmect.php';
+// Lấy tài khoản cần sửa theo id trên đường dẫn
 $id = $_GET['id'] ?? '';
 $taiKhoan = null;
 if ($id !== '') {
@@ -47,6 +48,7 @@ if ($id !== '') {
 <body>
     <h1>Cập nhật tài khoản</h1>
     <?php if ($taiKhoan) { ?>
+    <!-- Ô mật khẩu để trống nghĩa là giữ mật khẩu cũ -->
     <form class="khoi" action="index.php?page=suataikhoan&id=<?php echo htmlspecialchars($taiKhoan['id']); ?>" method="POST">
         <div class="i-text">
             <input type="text" name="tenDangNhap" value="<?php echo htmlspecialchars($taiKhoan['ten_dang_nhap']); ?>" placeholder="Tên đăng nhập">
@@ -77,6 +79,7 @@ if ($id !== '') {
     <?php } ?>
 
     <?php
+        // Cập nhật khi form gửi đủ trường và tài khoản vẫn tồn tại
         if(isset($_POST['tenDangNhap']) &&
            isset($_POST['email']) &&
            isset($_POST['hoten']) &&
@@ -92,6 +95,7 @@ if ($id !== '') {
             $ngaysinh = $_POST['ngaysinh'];
             $sdt = $_POST['sdt'];
             $gioitinh = $_POST['gioitinh'];
+            // Không nhập mật khẩu mới thì dùng lại mật khẩu đang lưu
             if ($matKhau === '') {
                 $matKhau = $taiKhoan['mat_khau'];
             }

@@ -1,5 +1,6 @@
 <?php
 include_once __DIR__ . '/conmect.php';
+// Lấy thể loại cần sửa theo id trên đường dẫn
 $id = $_GET['id'] ?? '';
 $danhMuc = null;
 if ($id !== '') {
@@ -47,6 +48,7 @@ if ($id !== '') {
 <body>
     <h1>Cập nhật danh mục</h1>
     <?php if ($danhMuc) { ?>
+    <!-- Điền sẵn tên thể loại hiện tại vào ô nhập -->
     <form class="khoi" action="index.php?page=suadanhmuc&id=<?php echo htmlspecialchars($danhMuc['id']); ?>" method="POST">
         <div class="i-text">
             <input type="text" name="tenTheLoai" value="<?php echo htmlspecialchars($danhMuc['ten_the_loai']); ?>" placeholder="Tên thể loại">
@@ -58,6 +60,7 @@ if ($id !== '') {
     <?php } ?>
 
     <?php
+        // Cập nhật tên thể loại khi form được gửi
         if(isset($_POST['tenTheLoai']) && $danhMuc)
         {
             $tenTheLoai = $_POST['tenTheLoai'];

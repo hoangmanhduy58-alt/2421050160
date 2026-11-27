@@ -41,6 +41,7 @@
     <a class="them-tai-khoan" href="index.php?page=themtaikhoan">Thêm tài khoản</a>
     <?php
     include_once __DIR__ . '/conmect.php';
+    // Không lấy cột mật khẩu ra danh sách
     $sql = "SELECT id, ten_dang_nhap, email, ho_ten, ngay_sinh, so_dien_thoai, gioi_tinh FROM nguoidung";
     $result = mysqli_query($conn, $sql);
     ?>
@@ -59,6 +60,7 @@
         <?php
         if ($result) {
             while ($row = mysqli_fetch_assoc($result)) {
+                // 0 là Nam, 1 là Nữ
                 if ($row['gioi_tinh'] === '0' || $row['gioi_tinh'] === 0) {
                     $gioiTinh = 'Nam';
                 } elseif ($row['gioi_tinh'] === '1' || $row['gioi_tinh'] === 1) {

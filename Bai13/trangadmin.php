@@ -11,6 +11,7 @@
         tr, th, td{
             border: 1px solid black;
         }
+        /* Nút dẫn tới các mục quản trị */
         .them-tai-khoan{
             display: inline-block;
             margin: 8px 0 12px;
@@ -43,6 +44,7 @@
     <a class="them-tai-khoan" href="index.php?page=danhmuc">Danh mục</a>
     <a class="them-tai-khoan" href="index.php?page=phim">Phim</a>
 
+    <!-- Bảng lối tắt xem và thêm từng mục -->
     <table>
         <tr>
             <th>Mục</th>

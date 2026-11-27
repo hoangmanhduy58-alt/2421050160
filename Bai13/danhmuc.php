@@ -41,6 +41,7 @@
     <a class="them-tai-khoan" href="index.php?page=themdanhmuc">Thêm danh mục</a>
     <?php
     include_once __DIR__ . '/conmect.php';
+    // Lấy toàn bộ thể loại trong bảng the_loai
     $sql = "SELECT id, ten_the_loai FROM the_loai";
     $result = mysqli_query($conn, $sql);
     ?>
@@ -52,6 +53,7 @@
             <th>Chức năng</th>
         </tr>
         <?php
+        // In mỗi thể loại thành một dòng, kèm nút sửa và xóa
         if ($result) {
             while ($row = mysqli_fetch_assoc($result)) {
                 $id = htmlspecialchars($row['id']);

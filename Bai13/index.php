@@ -1,4 +1,5 @@
 <?php
+// Mở session và chặn người chưa đăng nhập
 session_start();
 include_once 'conmect.php';
 if (!isset($_SESSION['tendangnhap']) || $_SESSION['tendangnhap'] != "thành công") {
@@ -12,7 +13,8 @@ if (!isset($_SESSION['tendangnhap']) || $_SESSION['tendangnhap'] != "thành côn
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style> 
+    <style>
+        /* Menu ngang trên đầu trang */
         ul {
             list-style: none;
             display: flex;
@@ -29,7 +31,8 @@ if (!isset($_SESSION['tendangnhap']) || $_SESSION['tendangnhap'] != "thành côn
     </style>
 </head>
 <body>
-    <?php 
+    <?php
+    // Kiểm tra lại session trước khi hiện nội dung
     if (isset($_SESSION['tendangnhap']) && $_SESSION['tendangnhap'] == "thành công") {
         echo "Xin chào " . $_SESSION['tendangnhap'];
     } else {
@@ -37,9 +40,14 @@ if (!isset($_SESSION['tendangnhap']) || $_SESSION['tendangnhap'] != "thành côn
         exit;
     }
     ?>
+    <!-- Các mục chính của trang quản trị -->
+    <!-- header: vùng đầu trang -->
     <header>
+        <!-- nav: khối menu điều hướng -->
         <nav>
+            <!-- ul: danh sách không đánh số. li: một mục trong danh sách -->
             <ul>
+                <!-- a: liên kết. href là địa chỉ mở ra khi bấm -->
                 <li><a href="index.php?page=trangadmin">Trang admin</a></li>
                 <li><a href="index.php?page=taikhoan">Tài khoản</a></li>
                 <li><a href="index.php?page=danhmuc">Danh mục</a></li>
@@ -48,6 +56,7 @@ if (!isset($_SESSION['tendangnhap']) || $_SESSION['tendangnhap'] != "thành côn
         </nav>
     </header>
     <?php
+    // Tham số page quyết định file được nhúng vào trang
     if (isset($_GET['page'])) {
         $page = $_GET['page'];
         switch ($page) {
